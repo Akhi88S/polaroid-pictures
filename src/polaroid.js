@@ -99,7 +99,7 @@ const App = () => {
 
       <div id="dropzone" {...getRootProps()}>
         <input {...getInputProps()} />
-        <p>Drag & drop a couple photo here, or click to select one</p>
+        <p>Drag & drop a photo here, or click to select one</p>
       </div>
 
       {uploadedImage && (
