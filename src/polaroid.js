@@ -23,8 +23,9 @@ const App = () => {
     if (imageRef.current) {
       const { width, height } = imageRef.current;
       setImageDimensions({ width, height });
+      console.log(imageDimensions)
     }
-  }, [uploadedImage]);
+  }, [uploadedImage,imageDimensions]);
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
