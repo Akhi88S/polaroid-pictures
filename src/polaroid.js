@@ -70,14 +70,20 @@ const App = () => {
   };
 
   const handleDownload = () => {
+    alert('in click')
     if (!uploadedImage) return;
-
+alert('img uploaded')
     html2canvas(document.getElementById('polaroid')).then((canvas) => {
+
+      alert('link clicked2')
       const dataUrl = canvas.toDataURL('image/png');
+
+      alert('link clicked3')
       const link = document.createElement('a');
       link.href = dataUrl;
       link.download = 'polaroid.png';
       link.click();
+      alert('link clicked4')
     });
   };
 
