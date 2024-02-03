@@ -69,23 +69,22 @@ const App = () => {
     }));
   };
 
-  const handleDownload = () => {
-    alert('in click')
-    if (!uploadedImage) return;
-alert('img uploaded')
-    html2canvas(document.getElementById('polaroid')).then((canvas) => {
+const handleDownload = () => {
+  if (!uploadedImage) return;
 
-      alert('link clicked2')
-      const dataUrl = canvas.toDataURL('image/png');
+  html2canvas(document.getElementById('polaroid')).then((canvas) => {
+    const dataUrl = canvas.toDataURL('image/png');
 
-      alert('link clicked3')
-      const link = document.createElement('a');
-      link.href = dataUrl;
-      link.download = 'polaroid.png';
-      link.click();
-      alert('link clicked4')
-    });
-  };
+    const link = document.createElement('a');
+    link.href = dataUrl;
+    link.download = 'polaroid.png';
+
+    // Trigger a click event on the link to initiate the download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+};
 
   const polaroidStyle = {
     position: 'relative',
