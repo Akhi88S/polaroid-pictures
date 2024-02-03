@@ -109,6 +109,7 @@ h1 {
 }
 
 .downloadButton {
+  width:250px;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 25px;
